@@ -1,6 +1,6 @@
-# Fact Card Format
+# Fact Card Content and Markdown Fallback
 
-Every fact uses this template, written in the user's language (translate the labels too). Add nothing else: no intro sentence, no "here is today's fact", no question at the end of the card.
+The card is normally shown visually with [../assets/card.html](../assets/card.html). The content rules below always apply. Use the Markdown template only when you cannot render HTML. Write in the user's language (translate the labels too). Add nothing else: no intro sentence, no "here is today's fact", no question at the end.
 
 ```
 ### {emoji} Fact of the Day · {Interest}

@@ -1,0 +1,76 @@
+<!-- Snacky fact card. Replace every {{PLACEHOLDER}}; delete blocks marked OPTIONAL when not needed. -->
+<style>
+  .snacky {
+    --sn-bg: #faf9f5; --sn-surface: #ffffff; --sn-text: #141413; --sn-muted: #6b6a63;
+    --sn-line: #e8e6dc; --sn-accent: #d97757; --sn-accent-soft: #f6e4dc;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--sn-text); max-width: 560px; margin: 8px auto;
+  }
+  @media (prefers-color-scheme: dark) {
+    .snacky {
+      --sn-bg: #262624; --sn-surface: #30302e; --sn-text: #faf9f5; --sn-muted: #b0aea5;
+      --sn-line: #3e3e3a; --sn-accent: #e08a6d; --sn-accent-soft: #3d2c25;
+    }
+  }
+  .snacky * { box-sizing: border-box; }
+  .snacky .card { background: var(--sn-surface); border: 1px solid var(--sn-line); border-radius: 16px; overflow: hidden; }
+  .snacky .top { display: flex; align-items: center; gap: 10px; padding: 14px 20px; background: var(--sn-bg); border-bottom: 1px solid var(--sn-line); }
+  .snacky .emoji { font-size: 22px; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 10px; background: var(--sn-accent-soft); }
+  .snacky .kicker { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--sn-muted); }
+  .snacky .topic { font-size: 14px; font-weight: 600; }
+  .snacky .date { margin-left: auto; font-size: 12px; color: var(--sn-muted); white-space: nowrap; }
+  .snacky .body { padding: 20px 20px 4px; }
+  .snacky h2 { font-family: ui-serif, Georgia, "Times New Roman", serif; font-weight: 500; font-size: 24px; line-height: 1.25; margin: 0 0 12px; }
+  .snacky p { font-size: 15px; line-height: 1.6; margin: 0 0 16px; }
+  .snacky .why { background: var(--sn-bg); border-left: 3px solid var(--sn-accent); border-radius: 0 10px 10px 0; padding: 12px 14px; font-size: 14px; line-height: 1.55; margin-bottom: 16px; }
+  .snacky .why b { color: var(--sn-accent); font-weight: 600; }
+  .snacky .src { font-size: 13px; color: var(--sn-muted); padding: 0 20px 18px; }
+  .snacky .src a { color: var(--sn-muted); text-decoration: underline; text-underline-offset: 2px; }
+  .snacky .foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 14px 20px; border-top: 1px solid var(--sn-line); background: var(--sn-bg); }
+  .snacky button, .snacky .btn { font: inherit; font-size: 13px; cursor: pointer; border-radius: 999px; padding: 8px 14px; border: 1px solid var(--sn-line); background: var(--sn-surface); color: var(--sn-text); text-decoration: none; }
+  .snacky button.primary { background: var(--sn-accent); border-color: var(--sn-accent); color: #fff; }
+  .snacky .support { margin-left: auto; font-size: 13px; color: var(--sn-muted); text-decoration: none; }
+  .snacky .support:hover { color: var(--sn-accent); }
+  .snacky .done { font-size: 13px; color: var(--sn-muted); }
+</style>
+
+<div class="snacky">
+  <div class="card">
+    <div class="top">
+      <div class="emoji">{{EMOJI}}</div>
+      <div>
+        <div class="kicker">{{LABEL_FACT_OF_THE_DAY}}</div>
+        <div class="topic">{{INTEREST}}</div>
+      </div>
+      <div class="date">{{DATE}}</div>
+    </div>
+    <div class="body">
+      <h2>{{TITLE}}</h2>
+      <p>{{FACT}}</p>
+      <div class="why"><b>💡 {{LABEL_WHY}}</b> {{WHY}}</div>
+    </div>
+    <div class="src">📚 {{LABEL_SOURCE}}: <a href="{{SOURCE_URL}}" target="_blank" rel="noopener">{{SOURCE_NAME}}</a></div>
+    <div class="foot">
+      <!-- OPTIONAL: daily setup button. Keep only if no daily scheduled task exists yet. -->
+      <button class="primary" data-prompt="{{PROMPT_SETUP_DAILY}}">⏰ {{LABEL_SETUP_DAILY}}</button>
+      <!-- /OPTIONAL -->
+      <button data-prompt="{{PROMPT_ANOTHER}}">✨ {{LABEL_ANOTHER}}</button>
+      <a class="support" href="https://github.com/sponsors/Mura7" target="_blank" rel="noopener">☕ {{LABEL_SUPPORT}}</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.snacky [data-prompt]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.getAttribute('data-prompt');
+      if (typeof window.sendPrompt === 'function') {
+        window.sendPrompt(text);
+        b.disabled = true;
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(text);
+        b.textContent = '📋 ' + text;
+      }
+    });
+  });
+</script>

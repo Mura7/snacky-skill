@@ -4,6 +4,8 @@
 
 Works in any language: Snacky answers in the language you write in.
 
+The fact arrives as a visual card (Claude design language, light and dark) with **Send it daily**, **Another fact** and **Support** buttons. Where Claude can't render visuals, it falls back to a Markdown card.
+
 ```
 🏛️ Fact of the Day · History
 
@@ -49,7 +51,9 @@ snacky/                 # the skill (folder name must match the skill name)
 ├── SKILL.md            # workflow
 └── references/
     ├── interests.md    # interest list
-    └── card-format.md  # card template and rules
+    └── card-format.md  # content rules + Markdown fallback
+└── assets/
+    └── card.html       # visual card template
 dist/snacky.zip         # ready-to-upload package
 ```
 
@@ -63,7 +67,7 @@ Snacky is free. If it teaches you something, you can [sponsor it on GitHub](http
 
 ## Türkçe
 
-**Her gün ilgi alanına göre bir bilgi.** Ücretsiz bir Claude Skill'i: sunucu, API ya da reklam yok. Bilgiyi kendi Claude'un yazar; Snacky ilgi alanlarını, kart formatını ve doğruluk kurallarını standart hâle getirir.
+**Her gün ilgi alanına göre bir bilgi, görsel bir kart olarak.** Ücretsiz bir Claude Skill'i: sunucu, API ya da reklam yok. Bilgiyi kendi Claude'un yazar; Snacky ilgi alanlarını, kart formatını ve doğruluk kurallarını standart hâle getirir.
 
 **Kurulum:** [`dist/snacky.zip`](dist/snacky.zip) dosyasını indir → Claude'da **Ayarlar → Capabilities** içinde "Code execution and file creation" açık olsun → **Özelleştirme → Skills → Ekle → Skill yükle** ile zip'i yükle → yeni sohbette **"günün bilgisi"** yaz. Her sabah kendiliğinden gelsin istersen **"günlük bilgi kur"** de.
 
