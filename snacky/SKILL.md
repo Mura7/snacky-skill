@@ -16,6 +16,7 @@ First look for interests the user already picked: check your memory, this conver
 - **Found:** go straight to step 2. Do not ask again.
 - **Not found**, or the user says "change my interests": show the **interest picker** (below). The user may pick as many interests as they like. After they choose:
   - If memory is available, save the choice and the list version, e.g. `Snacky interests: history, space, faith` and `Snacky list version seen: 2`.
+  - If memory refuses to save part of the choice (for example, Claude's memory may block religious topics like the faith interest unless the user allows sensitive topics in memory settings), save the rest, say so in one short sentence, and mention that the daily task text keeps the full list. Never rename or encode an interest to get around a memory restriction.
   - If a daily Snacky scheduled task exists, update its text with the new interests (or, if you cannot edit tasks, tell the user in one sentence).
   - Then give the first card right away. Its "daily" button offers the setup in step 4, so do not add a text offer.
 
@@ -32,6 +33,8 @@ Never ask with a plain text list when you can render visuals. In order of prefer
    - The confirm button sends e.g. `Snacky ilgi alanlarım: Tarih, Uzay [history,space]`. Treat that message as the user's choice.
 2. **Artifact**: otherwise, an HTML artifact from the same template.
 3. **Text**: only if neither works, a numbered list; the user may answer with any number of numbers.
+
+Write nothing before or after the picker except one short line when it helps (e.g. which interests are pre-selected).
 
 ### New categories (list version)
 
