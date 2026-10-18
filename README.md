@@ -4,7 +4,7 @@
 
 Works in any language: Snacky answers in the language you write in.
 
-The fact arrives as a visual card (Claude design language, light and dark) with **Send it daily**, **Another fact** and **Support** buttons. Where Claude can't render visuals, it falls back to a Markdown card.
+The fact arrives as a visual card (Claude design language, light and dark) with **Send it daily**, **Another fact** and **Support** buttons. Icons are from [Lucide](https://lucide.dev) (ISC License), embedded in the templates. Where Claude can't render visuals, it falls back to a Markdown card.
 
 ```
 🏛️ Fact of the Day · History

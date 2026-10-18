@@ -25,7 +25,8 @@ First look for interests the user already picked: check your memory, this conver
 Never ask with a plain text list when you can render visuals. In order of preference:
 
 1. **Inline visual**: render [assets/picker.html](assets/picker.html). Replace `{{CHIPS}}` with one button per interest in [references/interests.md](references/interests.md), in table order:
-   `<button class="chip" data-code="history" data-label="Tarih" aria-pressed="false">🏛️ Tarih</button>`
+   `<button class="chip" data-code="history" data-icon="history" data-label="Tarih" aria-pressed="false">Tarih</button>`
+   - Do not add emoji: the template draws a Lucide icon from `data-icon` (same as the code).
    - `data-label` and the visible name in the user's language; `data-code` is the code from the table.
    - When changing interests, set `aria-pressed="true"` on the user's current interests.
    - On interests that are new since the user's seen list version, add `<span class="new">{{LABEL_NEW}}</span>` inside the button (EN "New", TR "Yeni").
@@ -64,6 +65,7 @@ Write the content by the rules in [references/card-format.md](references/card-fo
 3. **Markdown**: only if neither is available, use the Markdown fallback in card-format.md.
 
 Filling the template:
+- `INTEREST_CODE` is the interest's code from interests.md (e.g. `history`); the template draws its icon. The emoji in card-format.md are only for the Markdown fallback.
 - All labels (`LABEL_*`) and prompts (`PROMPT_*`) go in the user's language. English: "Fact of the Day", "Why it matters", "Source", "Send it daily", "Another fact", "Support". Turkish: "Günün Bilgisi", "Neden ilginç?", "Kaynak", "Her gün gönder", "Başka bir bilgi", "Destek ol".
 - `PROMPT_SETUP_DAILY`: e.g. "set up daily fact at 09:00" / "günlük bilgiyi her sabah 09:00'da kur". `PROMPT_ANOTHER`: e.g. "another fact" / "başka bir bilgi ver".
 - Remove the OPTIONAL new-categories notice unless step 1 says to show it.

@@ -24,7 +24,7 @@ The user picks **as many interests as they like** (at least one) from this list.
 | 16 | food | Food & Cooking | Yemek ve Mutfak | origins of dishes, kitchen science, practical tips |
 | 17 | faith | Quran Verses & Hadith | Ayet ve Hadis | a verse with its meaning, a hadith, context of revelation, a prophet's story from the Quran, a word from the Quran |
 
-Emoji for the picker and card: 🔬 science, 🚀 space, 🏛️ history, 💻 technology, 🫀 health, 🧠 psychology, 💰 finance, 🌿 nature, 🌍 geography, 🎨 art, 🎵 music, ⚽ sports, 🔤 language, 🤔 philosophy, 📈 business, 🍳 food, 📖 faith.
+Emoji for the Markdown fallback only (the visual card and picker use Lucide icons by code): 🔬 science, 🚀 space, 🏛️ history, 💻 technology, 🫀 health, 🧠 psychology, 💰 finance, 🌿 nature, 🌍 geography, 🎨 art, 🎵 music, ⚽ sports, 🔤 language, 🤔 philosophy, 📈 business, 🍳 food, 📖 faith.
 
 ## Changelog
 
