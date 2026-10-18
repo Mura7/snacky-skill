@@ -27,21 +27,26 @@ bed on Friday 6 October and woke up on Friday 18 October.
 1. Download [`dist/snacky.zip`](dist/snacky.zip).
 2. In Claude, open **Settings → Capabilities** and turn on **Code execution and file creation**.
 3. Go to **Customize → Skills → + → Upload a skill** and upload `snacky.zip`.
-4. In a new chat, type **"daily fact"** (or "günün bilgisi"). The first time, pick 1–3 interests from 16.
+4. In a new chat, type **"daily fact"** (or "günün bilgisi"). The first time, a picker appears: tap as many of the 17 interests as you like.
 5. Want it every morning without typing? Say **"set up daily fact"** and Claude creates a daily scheduled task.
 
 More on skills: [Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
 
 ## Interests
 
-Science · Space & Astronomy · History · Technology · Health & Nutrition · Psychology · Economics & Personal Finance · Nature & Animals · Geography & Cultures · Art & Literature · Music & Film · Sports · Language & Words · Philosophy · Business & Entrepreneurship · Food & Cooking
+Science · Space & Astronomy · History · Technology · Health & Nutrition · Psychology · Economics & Personal Finance · Nature & Animals · Geography & Cultures · Art & Literature · Music & Film · Sports · Language & Words · Philosophy · Business & Entrepreneurship · Food & Cooking · Quran Verses & Hadith
+
+**Quran Verses & Hadith** uses only official Diyanet sources: [Kur'an-ı Kerim Portalı](https://kuran.diyanet.gov.tr) for verses, translation and commentary, and [Hadislerle İslâm](https://hadislerleislam.diyanet.gov.tr) for hadith. Every card gives the exact reference.
+
+**Versioning:** `references/interests.md` has a list version and a changelog. When new interests ship, users who already picked theirs see a one-time "new categories" notice on their next card.
 
 ## Commands
 
 | Say | What happens |
 |---|---|
 | `daily fact` | Today's card |
-| `change my interests` | Pick interests again |
+| `change my interests` | Open the picker again |
+| `show new categories` | Picker with new interests marked |
 | `set up daily fact` | Daily automatic card via a scheduled task |
 
 ## Repository layout
@@ -50,10 +55,11 @@ Science · Space & Astronomy · History · Technology · Health & Nutrition · P
 snacky/                 # the skill (folder name must match the skill name)
 ├── SKILL.md            # workflow
 └── references/
-    ├── interests.md    # interest list
+    ├── interests.md    # interest list, list version, Diyanet source rules
     └── card-format.md  # content rules + Markdown fallback
 └── assets/
-    └── card.html       # visual card template
+    ├── card.html       # visual card template
+    └── picker.html     # multi-select interest picker
 dist/snacky.zip         # ready-to-upload package
 ```
 
@@ -69,6 +75,6 @@ Snacky is free. If it teaches you something, you can [sponsor it on GitHub](http
 
 **Her gün ilgi alanına göre bir bilgi, görsel bir kart olarak.** Ücretsiz bir Claude Skill'i: sunucu, API ya da reklam yok. Bilgiyi kendi Claude'un yazar; Snacky ilgi alanlarını, kart formatını ve doğruluk kurallarını standart hâle getirir.
 
-**Kurulum:** [`dist/snacky.zip`](dist/snacky.zip) dosyasını indir → Claude'da **Ayarlar → Capabilities** içinde "Code execution and file creation" açık olsun → **Özelleştirme → Skills → Ekle → Skill yükle** ile zip'i yükle → yeni sohbette **"günün bilgisi"** yaz. Her sabah kendiliğinden gelsin istersen **"günlük bilgi kur"** de.
+**Kurulum:** [`dist/snacky.zip`](dist/snacky.zip) dosyasını indir → Claude'da **Ayarlar → Capabilities** içinde "Code execution and file creation" açık olsun → **Özelleştirme → Skills → Ekle → Skill yükle** ile zip'i yükle → yeni sohbette **"günün bilgisi"** yaz ve açılan ekrandan istediğin kadar ilgi alanı seç. **Ayet ve Hadis** kategorisi yalnızca Diyanet kaynaklarını (kuran.diyanet.gov.tr, hadislerleislam.diyanet.gov.tr) kullanır. Her sabah kendiliğinden gelsin istersen **"günlük bilgi kur"** de.
 
 Destek olmak istersen: [GitHub Sponsors](https://github.com/sponsors/Mura7) ☕

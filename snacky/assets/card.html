@@ -32,6 +32,8 @@
   .snacky .support { margin-left: auto; font-size: 13px; color: var(--sn-muted); text-decoration: none; }
   .snacky .support:hover { color: var(--sn-accent); }
   .snacky .done { font-size: 13px; color: var(--sn-muted); }
+  .snacky .news { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 20px 16px; padding: 10px 12px; border-radius: 12px; background: var(--sn-accent-soft); font-size: 13px; line-height: 1.45; }
+  .snacky .news button { margin-left: auto; }
 </style>
 
 <div class="snacky">
@@ -50,6 +52,9 @@
       <div class="why"><b>💡 {{LABEL_WHY}}</b> {{WHY}}</div>
     </div>
     <div class="src">📚 {{LABEL_SOURCE}}: <a href="{{SOURCE_URL}}" target="_blank" rel="noopener">{{SOURCE_NAME}}</a></div>
+    <!-- OPTIONAL: new-categories notice. Keep only when the interest list version is newer than the one the user has seen. -->
+    <div class="news">🆕 <span>{{LABEL_NEW_CATEGORIES}}</span><button data-prompt="{{PROMPT_SHOW_NEW}}">{{LABEL_SHOW_NEW}}</button></div>
+    <!-- /OPTIONAL -->
     <div class="foot">
       <!-- OPTIONAL: daily setup button. Keep only if no daily scheduled task exists yet. -->
       <button class="primary" data-prompt="{{PROMPT_SETUP_DAILY}}">⏰ {{LABEL_SETUP_DAILY}}</button>
