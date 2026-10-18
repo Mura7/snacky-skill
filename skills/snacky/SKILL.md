@@ -66,7 +66,7 @@ Write the content by the rules in [references/card-format.md](references/card-fo
 
 Filling the template:
 - `INTEREST_CODE` is the interest's code from interests.md (e.g. `history`); the template draws its icon. The emoji in card-format.md are only for the Markdown fallback.
-- All labels (`LABEL_*`) and prompts (`PROMPT_*`) go in the user's language. English: "Fact of the Day", "Why it matters", "Source", "Send it daily", "Another fact", "Support". Turkish: "Günün Bilgisi", "Neden ilginç?", "Kaynak", "Her gün gönder", "Başka bir bilgi", "Destek ol".
+- All labels (`LABEL_*`) and prompts (`PROMPT_*`) go in the user's language. English: "Fact of the Day", "Why it matters", "Source", "Send it daily", "Another fact". Turkish: "Günün Bilgisi", "Neden ilginç?", "Kaynak", "Her gün gönder", "Başka bir bilgi".
 - `PROMPT_SETUP_DAILY`: e.g. "set up daily fact at 09:00" / "günlük bilgiyi her sabah 09:00'da kur". `PROMPT_ANOTHER`: e.g. "another fact" / "başka bir bilgi ver".
 - Remove the OPTIONAL new-categories notice unless step 1 says to show it.
 - Remove the OPTIONAL daily-setup button if a daily scheduled task already exists (memory or the task text says so) or this run was started by the scheduled task.
@@ -89,4 +89,10 @@ If the user says "set up daily fact", "send it every day", or clicks the card's 
 
 ## Support
 
-Do not mention donations except through the "☕ Support" link in the card. If the user asks how to support the project, give the same link: https://github.com/sponsors/Mura7
+The card never carries a support link by default. Support is mentioned only in these two cases:
+
+1. **The user asks** ("support", "donate", "destek", "bağış", "how can I support Snacky?"): answer in one short sentence with this link: https://github.com/sponsors/Mura7
+2. **A rare thank-you note, at most 3 times ever**, and only if memory is available:
+   - After every card, keep a counter in memory: `Snacky cards shown: N` (increase by 1).
+   - When N reaches **10, 30 or 60**, and memory does not already say the note was shown at that count, add one line under that card, in the user's language: EN "Enjoying Snacky? It's free; you can support it here if you like: https://github.com/sponsors/Mura7", TR "Snacky'yi seviyorsan: ücretsiz, istersen buradan destek olabilirsin: https://github.com/sponsors/Mura7". Then save `Snacky support note shown at: N`.
+   - Never show it on any other card, never more than 3 times in total, never twice in one day, and never if the user said they don't want it. Without memory, never show it.

@@ -1,80 +1,56 @@
 # Snacky 🍿
 
-**One bite-sized fact a day, picked from your interests.** A free Claude Skill: no server, no API, no ads. Your own Claude writes the fact; Snacky standardizes the interests, the card format and the accuracy rules.
+**One bite-sized fact a day, picked from your interests.**
 
-Works in any language: Snacky answers in the language you write in.
+Snacky gives you one accurate, interesting fact per day as a small visual card. You pick your interests once from a list of 17 (science, space, history, technology, health, psychology, finance, nature, geography, art, music and film, sports, language, philosophy, business, food, and Quran verses & hadith). Each day Snacky rotates to the next interest. Claude writes the fact and checks it with web search when that's available; Snacky only standardizes the interests, the card format and the accuracy rules.
 
-The fact arrives as a visual card (Claude design language, light and dark) with **Send it daily**, **Another fact** and **Support** buttons. Icons are from [Lucide](https://lucide.dev) (ISC License), embedded in the templates. Where Claude can't render visuals, it falls back to a Markdown card.
+Snacky answers in the language you write in.
 
-```
-🏛️ Fact of the Day · History
+## Install
 
-Alaska once had two Fridays in a row
+**Claude Code / Claude directory:** install the `snacky` plugin.
 
-When the US took over Alaska on 18 October 1867, the territory switched from the
-Julian to the Gregorian calendar and moved across the date line. People went to
-bed on Friday 6 October and woke up on Friday 18 October.
+**Claude.ai (works on the Free plan):**
 
-💡 Why it matters: Calendars are human agreements, and changing them can make days vanish.
-
-📚 Source: Wikipedia – Department of Alaska
----
-18 October 2026 · ☕ Support
-```
-
-## Install (Claude, works on the Free plan)
-
-1. Download [`dist/snacky.zip`](dist/snacky.zip).
+1. Download [`snacky.zip`](https://github.com/Mura7/snacky-skill/releases/latest/download/snacky.zip) from the latest [release](https://github.com/Mura7/snacky-skill/releases).
 2. In Claude, open **Settings → Capabilities** and turn on **Code execution and file creation**.
 3. Go to **Customize → Skills → + → Upload a skill** and upload `snacky.zip`.
-4. In a new chat, type **"daily fact"** (or "günün bilgisi"). The first time, a picker appears: tap as many of the 17 interests as you like.
-5. Want it every morning without typing? Say **"set up daily fact"** and Claude creates a daily scheduled task.
+4. In a new chat, type **"daily fact"** (or "günün bilgisi").
 
-More on skills: [Use skills in Claude](https://support.claude.com/en/articles/12512180-use-skills-in-claude)
-
-## Interests
-
-Science · Space & Astronomy · History · Technology · Health & Nutrition · Psychology · Economics & Personal Finance · Nature & Animals · Geography & Cultures · Art & Literature · Music & Film · Sports · Language & Words · Philosophy · Business & Entrepreneurship · Food & Cooking · Quran Verses & Hadith
-
-**Quran Verses & Hadith** uses only official Diyanet sources: [Kur'an-ı Kerim Portalı](https://kuran.diyanet.gov.tr) for verses, translation and commentary, and [Hadislerle İslâm](https://hadislerleislam.diyanet.gov.tr) for hadith. Every card gives the exact reference.
-
-**Versioning:** `references/interests.md` has a list version and a changelog. When new interests ship, users who already picked theirs see a one-time "new categories" notice on their next card.
-
-## Commands
+## Use it
 
 | Say | What happens |
 |---|---|
-| `daily fact` | Today's card |
+| `daily fact` | Today's card. The first time, an interest picker appears. |
+| `another fact` | One more card from your interests |
 | `change my interests` | Open the picker again |
-| `show new categories` | Picker with new interests marked |
-| `set up daily fact` | Daily automatic card via a scheduled task |
+| `show new categories` | Picker with newly added interests marked |
+| `set up daily fact` | Creates a daily scheduled task, only when you ask for it |
+
+The card has two buttons: **Send it daily** (asks Claude to create the daily task) and **Another fact**. Where Claude can't render visuals, the card falls back to Markdown. Icons are [Lucide](https://lucide.dev) (ISC License), embedded in the templates.
+
+## Data
+
+Snacky has no server, no API and no tracking. It sends nothing anywhere and contains no ads.
+
+- If Claude's memory is on, Claude saves your chosen interests, a short list of the last 14 facts it showed you and a card counter, so it doesn't ask again or repeat itself. You can see and delete these in Claude's memory settings.
+- Snacky is free and has no ads. If memory is on, after your 10th, 30th and 60th card it adds one short line saying you can support it on GitHub Sponsors; that's at most 3 times ever. It also gives the link if you ask how to support it.
+- If web search is on, Claude searches the web to verify each fact and link its source.
+- The **Quran Verses & Hadith** interest uses only official Diyanet sources ([kuran.diyanet.gov.tr](https://kuran.diyanet.gov.tr), [hadislerleislam.diyanet.gov.tr](https://hadislerleislam.diyanet.gov.tr)) and gives the exact reference.
 
 ## Repository layout
 
 ```
-snacky/                 # the skill (folder name must match the skill name)
-├── SKILL.md            # workflow
-└── references/
-    ├── interests.md    # interest list, list version, Diyanet source rules
-    └── card-format.md  # content rules + Markdown fallback
-└── assets/
-    ├── card.html       # visual card template
-    └── picker.html     # multi-select interest picker
-dist/snacky.zip         # ready-to-upload package
+.claude-plugin/plugin.json   # plugin manifest
+skills/snacky/               # the skill: SKILL.md, references/, assets/
 ```
 
-Rebuild the zip after editing: `zip -r dist/snacky.zip snacky`
-
-## Support
-
-Snacky is free. If it teaches you something, you can [sponsor it on GitHub](https://github.com/sponsors/Mura7) ☕
-
----
+Build the claude.ai upload zip: `cd skills && zip -r ../snacky.zip snacky`, then attach it to a GitHub release.
 
 ## Türkçe
 
-**Her gün ilgi alanına göre bir bilgi, görsel bir kart olarak.** Ücretsiz bir Claude Skill'i: sunucu, API ya da reklam yok. Bilgiyi kendi Claude'un yazar; Snacky ilgi alanlarını, kart formatını ve doğruluk kurallarını standart hâle getirir.
+Her gün ilgi alanına göre bir bilgi, görsel bir kart olarak. Kurulum: son [sürümden](https://github.com/Mura7/snacky-skill/releases/latest/download/snacky.zip) `snacky.zip` dosyasını indir, Claude'da **Özelleştirme → Skills → Ekle → Skill yükle** ile yükle, yeni sohbette **"günün bilgisi"** yaz.
 
-**Kurulum:** [`dist/snacky.zip`](dist/snacky.zip) dosyasını indir → Claude'da **Ayarlar → Capabilities** içinde "Code execution and file creation" açık olsun → **Özelleştirme → Skills → Ekle → Skill yükle** ile zip'i yükle → yeni sohbette **"günün bilgisi"** yaz ve açılan ekrandan istediğin kadar ilgi alanı seç. **Ayet ve Hadis** kategorisi yalnızca Diyanet kaynaklarını (kuran.diyanet.gov.tr, hadislerleislam.diyanet.gov.tr) kullanır. Her sabah kendiliğinden gelsin istersen **"günlük bilgi kur"** de.
+## License
 
-Destek olmak istersen: [GitHub Sponsors](https://github.com/sponsors/Mura7) ☕
+MIT. Source and issues: [github.com/Mura7/snacky-skill](https://github.com/Mura7/snacky-skill)

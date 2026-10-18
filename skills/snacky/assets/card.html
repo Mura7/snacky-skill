@@ -31,8 +31,6 @@
   .snacky .foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 14px 20px; border-top: 1px solid var(--sn-line); background: var(--sn-bg); }
   .snacky button, .snacky .btn { display: inline-flex; align-items: center; gap: 6px; font: inherit; font-size: 13px; cursor: pointer; border-radius: 999px; padding: 8px 14px; border: 1px solid var(--sn-line); background: var(--sn-surface); color: var(--sn-text); text-decoration: none; }
   .snacky button.primary { background: var(--sn-accent); border-color: var(--sn-accent); color: #fff; }
-  .snacky .support { display: inline-flex; align-items: center; gap: 5px; margin-left: auto; font-size: 13px; color: var(--sn-muted); text-decoration: none; }
-  .snacky .support:hover { color: var(--sn-accent); }
   .snacky .done { font-size: 13px; color: var(--sn-muted); }
   .snacky .news { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 20px 16px; padding: 10px 12px; border-radius: 12px; background: var(--sn-accent-soft); font-size: 13px; line-height: 1.45; }
   .snacky .news button { margin-left: auto; }
@@ -62,7 +60,6 @@
       <button class="primary" data-prompt="{{PROMPT_SETUP_DAILY}}"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> {{LABEL_SETUP_DAILY}}</button>
       <!-- /OPTIONAL -->
       <button data-prompt="{{PROMPT_ANOTHER}}"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></svg> {{LABEL_ANOTHER}}</button>
-      <a class="support" href="https://github.com/sponsors/Mura7" target="_blank" rel="noopener"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg> {{LABEL_SUPPORT}}</a>
     </div>
   </div>
 </div>

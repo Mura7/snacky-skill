@@ -14,15 +14,14 @@ The card is normally shown visually with [../assets/card.html](../assets/card.ht
 📚 Source: [{source name}]({url})
 
 ---
-{date} · [☕ Support](https://github.com/sponsors/Mura7)
+{date}
 ```
 
-Turkish labels: "Günün Bilgisi", "Neden ilginç?", "Kaynak", "Destek ol".
+Turkish labels: "Günün Bilgisi", "Neden ilginç?", "Kaynak".
 
 ## Rules
 
 - **Emoji:** one emoji matching the interest (🔬 science, 🚀 space, 🏛️ history, 💻 technology, 🫀 health, 🧠 psychology, 💰 finance, 🌿 nature, 🌍 geography, 🎨 art, 🎵 music, ⚽ sports, 🔤 language, 🤔 philosophy, 📈 business, 🍳 food, 📖 faith).
 - **Date:** today's date in the user's language (e.g. "18 October 2026", "18 Ekim 2026").
 - **Source:** for the faith interest, only the Diyanet sources in interests.md. Otherwise a reliable, real source (encyclopedia, university, scientific body, reputable publication). If web search is available, verify it and give the real URL. Without web search, never invent a URL; write only the source name.
-- **Support link:** this line appears at the end of every card exactly as given (label translated), unchanged, with no extra promotion or comment.
 - If several interests are selected, give **one card per day**, rotating through them. Only if the user explicitly asks for "all of them" give one card per interest.
