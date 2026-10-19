@@ -1,11 +1,20 @@
 {
   "name": "snacky",
   "displayName": "Snacky",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "One bite-sized fact a day from interests you pick, shown as a standardized visual card. Claude writes and verifies the fact; Snacky sets the interests, the card format and the accuracy rules.",
-  "author": { "name": "Murat Altay", "url": "https://github.com/Mura7" },
+  "author": {
+    "name": "Murat Altay",
+    "url": "https://github.com/Mura7"
+  },
   "homepage": "https://github.com/Mura7/snacky-skill",
   "repository": "https://github.com/Mura7/snacky-skill",
   "license": "MIT",
-  "keywords": ["daily", "facts", "learning", "trivia", "education"]
+  "keywords": [
+    "daily",
+    "facts",
+    "learning",
+    "trivia",
+    "education"
+  ]
 }

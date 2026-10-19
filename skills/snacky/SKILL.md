@@ -61,8 +61,10 @@ Write nothing before or after the picker except one short line when it helps (e.
 Write the content by the rules in [references/card-format.md](references/card-format.md), then **show it as a visual card, not plain text**:
 
 1. **Inline visual** (preferred): if you have a tool that renders HTML/SVG visuals inline in the chat, render [assets/card.html](assets/card.html) with every `{{PLACEHOLDER}}` filled in.
-2. **Artifact**: otherwise, create an HTML artifact from the same template.
-3. **Markdown**: only if neither is available, use the Markdown fallback in card-format.md.
+2. **Artifact**: otherwise, if you can create an artifact that renders in the chat, create an HTML artifact from the same template, every placeholder filled.
+3. **Markdown**: otherwise (common in scheduled tasks and on mobile), write the Markdown card from card-format.md directly in your reply.
+
+Never send the card as a downloadable or shared file (for example an `.html` file made with code execution): it does not render in the chat, and a copied template still holds empty `{{PLACEHOLDER}}`s. If you ever produce the HTML with code, replace every placeholder with the real content first and check that no `{{` remains before showing it. When unsure whether a visual will render, use the Markdown card.
 
 Filling the template:
 - `INTEREST_CODE` is the interest's code from interests.md (e.g. `history`); the template draws its icon. The emoji in card-format.md are only for the Markdown fallback.
