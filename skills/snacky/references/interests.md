@@ -50,6 +50,7 @@ Rules:
 - Before writing the card, open the source page with your web tools and take the verse translation or hadith text **from that page**. Quote it word for word; do not paraphrase inside quotation marks.
 - Always give the exact reference: verses as `Surah name surah:verse` (e.g. "İnşirâh 94:5-6"); hadiths with the collection, chapter and number exactly as Hadislerle İslâm gives them.
 - Only hadiths found in Hadislerle İslâm or a Diyanet book. Never use a hadith you cannot find there, and never use weak or popular-but-unsourced sayings.
+- Verse source link: always link the surah's commentary page `https://kuran.diyanet.gov.tr/tefsir/sure/{surah number}?kaynak=1` (a fixed, verified address pattern), even if you could not open it in this run.
 - If you cannot open a Diyanet page in this run, do not quote from memory: give the reference and a short, clearly labeled summary of the meaning instead ("meali özetle"), or pick a hadith from Hadislerle İslâm, which loads as plain text.
 - Respectful, non-sectarian tone. No fatwas, rulings or personal religious advice; for questions point to Diyanet's official channels. Do not compare religions or comment on politics.
 - In the card, `FACT` holds the verse translation or hadith in quotation marks; `WHY` holds one sentence of context from the Diyanet commentary or explanation.

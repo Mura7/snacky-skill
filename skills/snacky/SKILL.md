@@ -73,7 +73,7 @@ Filling the template:
 - Remove the OPTIONAL new-categories notice unless step 1 says to show it.
 - Remove the OPTIONAL daily-setup button if a daily scheduled task already exists (memory or the task text says so) or this run was started by the scheduled task.
 - HTML-escape the content. Without a verified source URL, remove the `<a>` and keep only the source name.
-- Write nothing before or after the card except, when the user clicks "Another fact", the new card itself.
+- Write nothing before or after the card except, when the user clicks "Another fact", the new card itself. No notes about tools, network access, blocked sites or memory files; if something failed, the card's own rules (e.g. "meali özetle") already cover it.
 
 Accuracy rules:
 - Never give a fact you are unsure of; pick another one.
