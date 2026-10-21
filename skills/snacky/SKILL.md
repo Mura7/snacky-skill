@@ -61,8 +61,11 @@ Write nothing before or after the picker except one short line when it helps (e.
 Write the content by the rules in [references/card-format.md](references/card-format.md), then **show it as a visual card, not plain text**:
 
 1. **Inline visual** (preferred, also in scheduled tasks): render [assets/card.html](assets/card.html) with every `{{PLACEHOLDER}}` filled in, using your tool that shows HTML/SVG visuals inline in the chat (often named like "visualize" or "show_widget"). Such a tool may not be loaded yet: before falling back, look for it, including through any tool-search or deferred-tool mechanism you have, and load it.
-2. **Artifact**: otherwise, if you can create an artifact that renders in the chat, create an HTML artifact from the same template, every placeholder filled.
-3. **Markdown**: otherwise (common in scheduled tasks and on mobile), write the Markdown card from card-format.md directly in your reply.
+2. **One Snacky artifact** (scheduled tasks usually have no inline visual tool, but often have an artifact tool that publishes a page): keep a single artifact for Snacky and update it in place every day, never a new one per card.
+   - Look in memory for `Snacky card artifact: <url>`. If found, update that artifact (same URL) with today's filled card. If not, create it with the title "Snacky" and save its URL to memory.
+   - The page is [assets/card.html](assets/card.html) with every placeholder filled, inside a minimal HTML document. Remove the daily-setup and "Another fact" buttons there (they cannot send messages from a page).
+   - In the chat, write only one line: the card's title linked to the artifact (e.g. "🏛️ Günün Bilgisi: [Alaska'nın iki cuması](url)"). Nothing else.
+3. **Markdown**: only if neither works, write the Markdown card from card-format.md directly in your reply.
 
 Never send the card as a downloadable or shared file (for example an `.html` file made with code execution): it does not render in the chat, and a copied template still holds empty `{{PLACEHOLDER}}`s. If you ever produce the HTML with code, replace every placeholder with the real content first and check that no `{{` remains before showing it. When unsure whether a visual will render, use the Markdown card.
 
