@@ -22,7 +22,7 @@ The user picks **as many interests as they like** (at least one) from this list.
 | 14 | philosophy | Philosophy | Felsefe | thinkers, concepts, thought experiments |
 | 15 | business | Business & Entrepreneurship | İş ve Girişimcilik | company stories, productivity, marketing concepts |
 | 16 | food | Food & Cooking | Yemek ve Mutfak | origins of dishes, kitchen science, practical tips |
-| 17 | faith | Quran Verses & Hadith | Ayet ve Hadis | a verse with its meaning, a hadith, context of revelation, a prophet's story from the Quran, a word from the Quran |
+| 17 | faith | Quran Verses & Hadith | Ayet ve Hadis | one verse or hadith from [faith-pool.md](faith-pool.md) |
 
 Emoji for the Markdown fallback only (the visual card and picker use Lucide icons by code): 🔬 science, 🚀 space, 🏛️ history, 💻 technology, 🫀 health, 🧠 psychology, 💰 finance, 🌿 nature, 🌍 geography, 🎨 art, 🎵 music, ⚽ sports, 🔤 language, 🤔 philosophy, 📈 business, 🍳 food, 📖 faith.
 
@@ -46,11 +46,11 @@ Content for this interest must come **only** from the official sources of the Pr
 | Hadith and sīra books | Diyanet Dijital library | https://dijital.diyanet.gov.tr/Kitaplik/hadis-ve-siyer |
 | Background only (people, places, terms) | TDV İslâm Ansiklopedisi | https://islamansiklopedisi.org.tr |
 
+<a id="faith-pool"></a>
 Rules:
-- Before writing the card, open the source page with your web tools and take the verse translation or hadith text **from that page**. Quote it word for word; do not paraphrase inside quotation marks.
-- Always give the exact reference: verses as `Surah name surah:verse` (e.g. "İnşirâh 94:5-6"); hadiths with the collection, chapter and number exactly as Hadislerle İslâm gives them.
-- Only hadiths found in Hadislerle İslâm or a Diyanet book. Never use a hadith you cannot find there, and never use weak or popular-but-unsourced sayings.
-- Verse source link: always link the surah's commentary page `https://kuran.diyanet.gov.tr/tefsir/sure/{surah number}?kaynak=1` (a fixed, verified address pattern), even if you could not open it in this run.
-- If you cannot open a Diyanet page in this run, do not quote from memory: give the reference and a short, clearly labeled summary of the meaning instead ("meali özetle"), or pick a hadith from Hadislerle İslâm, which loads as plain text.
+- **Pick from the pool.** Every faith card is one entry of [faith-pool.md](faith-pool.md). Alternate verse (`A…`) and hadith (`H…`) days. Take the lowest id of that kind not yet in the user's card history; when all are used, start again from the oldest. Save the id in the card history line (e.g. `2026-10-21 faith A014 Asr 103:1-3`). Never invent an entry outside the pool.
+- **Reference and link come from the pool, exactly.** Verses: `Surah name surah:verse` (e.g. "İnşirâh 94:5-6") and the link `https://kuran.diyanet.gov.tr/tefsir/sure/{surah}?kaynak=1`. Hadith: the Reference column as written, and the link `https://hadislerleislam.diyanet.gov.tr/sayfa.php?CILT={volume}&SAYFA={page}` from the Vol/Page column.
+- **Verbatim text only from the page.** Try once to open the entry's Diyanet link. If it opens and shows the text, put that verse translation or hadith in `FACT` in quotation marks, word for word, and take one sentence of context for `WHY` from the commentary or explanation there.
+- **Otherwise use the pool's meaning.** If the page does not open or the text is not readable, do not search elsewhere and never quote from memory. Put the pool's own-words meaning in `FACT` without quotation marks, ending with "(özet; tam meal için kaynağa bakın)" for a verse or "(özet; tam metin için kaynağa bakın)" for a hadith, translated to the user's language. Write `WHY` yourself from the Topic column, one short sentence, no new claims.
+- Do not mention failed fetches, network access or the pool in the reply; the label inside the card is enough.
 - Respectful, non-sectarian tone. No fatwas, rulings or personal religious advice; for questions point to Diyanet's official channels. Do not compare religions or comment on politics.
-- In the card, `FACT` holds the verse translation or hadith in quotation marks; `WHY` holds one sentence of context from the Diyanet commentary or explanation.

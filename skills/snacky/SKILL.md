@@ -52,7 +52,7 @@ Write nothing before or after the picker except one short line when it helps (e.
 - Pick today's interest: if there are several, rotate through them day by day.
 - Pick one of that interest's subtopics. **Never repeat** a fact from the history (see below) or from this chat.
 - History: if memory is available, after every card save one line like `Snacky history: 2026-10-18 history "Alaska's two Fridays"`, keeping only the last 14 entries. Read it before choosing, and use the last entry to decide which interest comes next in the rotation.
-- For the **faith** interest (Quran verses and hadith), follow the source rules in [references/interests.md](references/interests.md): only Diyanet sources, verbatim quote, exact reference.
+- For the **faith** interest (Quran verses and hadith), pick the day's entry from [references/faith-pool.md](references/faith-pool.md) and follow the rules in [references/interests.md](references/interests.md#faith-pool): exact reference and Diyanet link from the pool, verbatim quote only if the Diyanet page opens, otherwise the pool's labeled summary.
 - Avoid clichés and myths ("the Great Wall is visible from space" and the like). Choose a lesser-known but verifiable fact.
 - If you can, tie it to today's date ("on this day"), the season, or a current event.
 
