@@ -60,7 +60,7 @@ Write nothing before or after the picker except one short line when it helps (e.
 
 Write the content by the rules in [references/card-format.md](references/card-format.md), then **show it as a visual card, not plain text**:
 
-1. **Inline visual** (preferred): if you have a tool that renders HTML/SVG visuals inline in the chat, render [assets/card.html](assets/card.html) with every `{{PLACEHOLDER}}` filled in.
+1. **Inline visual** (preferred, also in scheduled tasks): render [assets/card.html](assets/card.html) with every `{{PLACEHOLDER}}` filled in, using your tool that shows HTML/SVG visuals inline in the chat (often named like "visualize" or "show_widget"). Such a tool may not be loaded yet: before falling back, look for it, including through any tool-search or deferred-tool mechanism you have, and load it.
 2. **Artifact**: otherwise, if you can create an artifact that renders in the chat, create an HTML artifact from the same template, every placeholder filled.
 3. **Markdown**: otherwise (common in scheduled tasks and on mobile), write the Markdown card from card-format.md directly in your reply.
 
@@ -73,7 +73,7 @@ Filling the template:
 - Remove the OPTIONAL new-categories notice unless step 1 says to show it.
 - Remove the OPTIONAL daily-setup button if a daily scheduled task already exists (memory or the task text says so) or this run was started by the scheduled task.
 - HTML-escape the content. Without a verified source URL, remove the `<a>` and keep only the source name.
-- Write nothing before or after the card except, when the user clicks "Another fact", the new card itself. No notes about tools, network access, blocked sites or memory files; if something failed, the card's own rules (e.g. "meali özetle") already cover it.
+- Write nothing before or after the card (no "today it's history, let me verify" style progress lines either) except, when the user clicks "Another fact", the new card itself. No notes about tools, network access, blocked sites or memory files; if something failed, the card's own rules (e.g. "meali özetle") already cover it.
 
 Accuracy rules:
 - Never give a fact you are unsure of; pick another one.
