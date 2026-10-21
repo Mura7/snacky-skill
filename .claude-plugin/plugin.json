@@ -1,7 +1,7 @@
 {
   "name": "snacky",
   "displayName": "Snacky",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "One bite-sized fact a day from interests you pick, shown as a standardized visual card. Claude writes and verifies the fact; Snacky sets the interests, the card format and the accuracy rules.",
   "author": {
     "name": "Murat Altay",
